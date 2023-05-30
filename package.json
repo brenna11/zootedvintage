@@ -1,0 +1,19 @@
+{
+  "name": "zootedvintage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenna11/zootedvintage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenna11/zootedvintage/issues"
+  },
+  "homepage": "https://github.com/brenna11/zootedvintage#readme"
+}
