@@ -1,0 +1,131 @@
+<!--
+	Ravinun Navacinthorn
+	Final Project
+	INFO1272 JavaScript1
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="uft-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Final Project</title>
+		<script src="./index.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onload="loads();">
+		<!--start the header-->
+		<header>
+			<div class="header">
+				<h1>Zooted Vintage</h1>
+			</div>
+			<!--nav menu-->
+			<nav>
+				<ul class="nav-links">
+					<li><a href="final_project.html">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+	
+		<!--display items-->
+		<fieldset> 
+			<legend>Store Items</legend>
+			<div class="category">
+				<select id="displayFilter" onchange="displayStoreItems();">
+					<option value="All">All</option>
+					<option value="Coat">Coat</option>
+					<option value="Hoodies">Hoodies</option>
+					<option value="Sweatshirt">Sweatshirt</option>
+					<option value="Pants">Pants</option>
+					<option value="Jacket">Jacket</option>
+				</select>
+			</div>
+			
+			<!--currency and date-->
+			<div class="currency-change">
+				<select id="currencySelector" onchange="changeCurrency();">
+					<option selected value="CAD">CAD</option>
+					<option value="USD">USD</option>
+					<option value="GBP">GBP</option>
+				</select>
+			</div>
+			<div id="date-time">Date: <span id="dateTime">18/4/2022 13:02</span></div>
+			
+			<br>
+			<table>
+				<tbody  id="item">
+					<tr>
+						<th>ID</th>
+						<th>Product Name</th>
+						<th>Price</th>
+						<th>Quantity on Hand</th>
+						<th>Max</th>
+						<th>Category</th>
+						<th>Image</th>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
+		<br>
+
+		<!--display cart items-->
+		<fieldset> 
+			<legend>Select Items</legend>
+			<p class="all-text">
+				Item ID: <input type="text" id="addItemId" />
+				&nbsp;
+				<span class="valmsg" id="addIDValidationMessage"></span>
+			</p>
+			<p class="all-text">
+				Qty: <input type="number" id="addItemQty" />
+				&nbsp;
+				<span class="valmsg" id="addQtyValidationMessage"></span>
+			</p>
+			<p>
+				<div class="btn">
+					<input type="button" value="Item Details" onclick="showDetails();"/>
+					<input type="button" value="Add Item" onclick="addCart();"/>
+					<input type="button" value="Remove Item" onclick="removeCart();"/>
+				</div>
+			</p>
+		</fieldset>
+		<br>
+
+		<!--display total orders in cart-->
+		<fieldset> 
+			<legend>Your Cart</legend>
+			<p class="all-text" id="nocart">No items selected! Add something to your cart!</p>
+			<table>
+				<tbody  id="cart">
+					
+				</tbody>
+			</table>
+			<br>
+			<div id="cartOutput"></div>
+			<br>
+			<div id="cartCheckout"></div>
+			<hr>
+			<div class="all-text" id="subTotal">Items Subtotal: $0.00</div>
+			<div class="all-text" id="etmShipping">Estimated Shipping: $0.00</div>
+			<br>
+			<div class="all-text" id="allTotal">Subtotal: $0.00</div>
+			<div class="all-text" id="tax">Taxes: $0.00</div>
+			<div class="all-text" id="finalTotal">Total: $0.00</div>
+		</fieldset>
+		<br>
+
+		<!--display items review-->
+		<fieldset> 
+			<legend>Write Your Review Here</legend>
+			<p class="all-text">ID: <input type="text" id="reviewId" />&nbsp;<span class="valmsg" id="reviewIdCode"></span></p>
+			<p class="all-text">Review: <input type="text" id="reviewText"/>&nbsp;<span class="valmsg" id="reviewItemText"></span></p>
+			<p class="all-text">Rating: <input type="number" id="ratingNum"/>&nbsp;<span class="valmsg" id="addRatingValidationMessage"></span></p>
+			<p>
+				<div class="btn">
+					<input type="button" value="Review" onclick="addReviews();"/>
+				</div>
+			</p>
+		</fieldset>
+	</body>
+</html>
